@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "module": "commonjs",
+        "target": "es3",
+        "noImplicitAny": false,
+        "outDir": "built",
+        "rootDir": "."
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "./bin/www.ts"
+    ]
+}

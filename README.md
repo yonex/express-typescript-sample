@@ -70,6 +70,7 @@ DEBUG=myapp:* node ./bin/www.js
 ```
 
 ### より便利にしたい
+#### tsconfig
 `tsconfig.json` ってやつを作っておくと、コンパイルコマンドが簡潔になってよさそう
 
 - TypeScriptSamples/tsconfig.json at master · Microsoft/TypeScriptSamples
@@ -87,3 +88,6 @@ https://github.com/Microsoft/TypeScriptSamples/blob/master/imageboard/tsconfig.j
 /// <reference path='./typings/tsd.d.ts' />
 ```
 ということで消した
+
+#### tsd reinstall 自動実行
+このプロジェクトをクローンして起動したい人が `npm install` をしたとき同時に type definitions も install してやるには、 `package.json` の postinstall に `tsd reinstall` を追加しておけばよい

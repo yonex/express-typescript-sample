@@ -1,12 +1,12 @@
-import express = require('express');
-import path = require('path');
-import favicon = require('serve-favicon');
-import logger = require('morgan');
-import cookieParser = require('cookie-parser');
-import bodyParser = require('body-parser');
+import * as express from "express";
+import * as path from "path";
+import * as favicon from "serve-favicon";
+import * as logger from "morgan";
+import * as cookieParser from "cookie-parser";
+import * as bodyParser from "body-parser";
 
-import routes = require('./routes/index');
-import users = require('./routes/users');
+import * as routes from "./routes/index";
+import * as users from "./routes/users";
 
 var app = express();
 
@@ -18,7 +18,7 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -26,10 +26,10 @@ app.use('/', routes);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err['status'] = 404;
-  next(err);
+app.use((req:express.Request, res:express.Response, next:Function) => {
+    var err = new Error('Not Found');
+    err['status'] = 404;
+    next(err);
 });
 
 // error handlers
@@ -37,24 +37,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err:any, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use((err:any, req:express.Request, res:express.Response, next:Function) => {
+        res.status(err['status'] || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err:any, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+app.use((err:any, req:express.Request, res:express.Response, next:Function) => {
+    res.status(err['status'] || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
-
 
 export = app;

@@ -70,12 +70,20 @@ DEBUG=myapp:* node ./bin/www.js
 ```
 
 ### より便利にしたい
-tsconfig.json ってやつを作っておくと、コンパイルコマンドが簡潔になってよさそう
+`tsconfig.json` ってやつを作っておくと、コンパイルコマンドが簡潔になってよさそう
 
 - TypeScriptSamples/tsconfig.json at master · Microsoft/TypeScriptSamples
 https://github.com/Microsoft/TypeScriptSamples/blob/master/imageboard/tsconfig.json
 
 ```sh
-./node_modules/.bin/tsc --init --sourcemap --module commonjs ./bin/www.ts
+./node_modules/.bin/tsc --init --sourcemap --module commonjs --outDir . --target es6 ./bin/www.ts ./typings/tsd.d.ts
 ```
-こうしておくと、このプロジェクトをコンパイルしたい人は、オプションなしの `tsc` を発動するだけでよくなる（んだと思う）
+こうしておくと、コンパイルの設定が `tsconfig.json` に書き出されるので、このプロジェクトをコンパイルしたい人は、オプションなしの `tsc` を発動するだけでよくなる
+```sh
+./node_modules/.bin/tsc
+```
+ちなみに、ここで `./typings/tsd.d.ts` もコンパイル対象に追加したことで、 app.ts の先頭に書いていたこれも消せるということらしい
+```ts
+/// <reference path='./typings/tsd.d.ts' />
+```
+ということで消した

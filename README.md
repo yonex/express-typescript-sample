@@ -91,3 +91,18 @@ https://github.com/Microsoft/TypeScriptSamples/blob/master/imageboard/tsconfig.j
 
 #### tsd reinstall 自動実行
 このプロジェクトをクローンして起動したい人が `npm install` をしたとき同時に type definitions も install してやるには、 `package.json` の postinstall に `tsd reinstall` を追加しておけばよい
+
+### tsd が deprecated なので typings にする
+`npm install` するとこう言われる
+```
+npm WARN deprecated tsd@0.6.5: TSD is deprecated in favor of Typings (https://github.com/typings/typings) - see https://github.com/DefinitelyTyped/tsd/issues/269 for more information
+```
+https://github.com/DefinitelyTyped/tsd/issues/269 にしたがって tsd を typings に置き換えた
+```sh
+npm uninstall --save tsd
+rm -rf typings/
+npm install --save typings
+./node_modules/.bin/typings init --upgrade
+rm tsd.json
+```
+`package.json` の `postinstall` と、`tsconfig.json` の `files` も更新が必要

@@ -1,0 +1,14 @@
+{
+  "ambientDependencies": {
+    "body-parser": "github:DefinitelyTyped/DefinitelyTyped/body-parser/body-parser.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "serve-static": "github:DefinitelyTyped/DefinitelyTyped/serve-static/serve-static.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "mime": "github:DefinitelyTyped/DefinitelyTyped/mime/mime.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "cookie-parser": "github:DefinitelyTyped/DefinitelyTyped/cookie-parser/cookie-parser.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "debug": "github:DefinitelyTyped/DefinitelyTyped/debug/debug.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "jade": "github:DefinitelyTyped/DefinitelyTyped/jade/jade.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "morgan": "github:DefinitelyTyped/DefinitelyTyped/morgan/morgan.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1",
+    "serve-favicon": "github:DefinitelyTyped/DefinitelyTyped/serve-favicon/serve-favicon.d.ts#e69fe60f2d6377ea4fae539493997b098f52cad1"
+  }
+}

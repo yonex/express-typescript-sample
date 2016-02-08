@@ -12,6 +12,6 @@
     ],
     "files": [
         "./bin/www.ts",
-        "./typings/tsd.d.ts"
+        "./typings/main.d.ts"
     ]
 }

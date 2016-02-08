@@ -1,6 +1,16 @@
 # express-typescript-sample
 Express を TypeScript で書きたい！
 
+# このプロジェクトの起動方法
+```sh
+git clone git@github.com:yonexyonex/express-typescript-sample.git
+cd express-typescript-sample
+npm install
+npm run build
+npm start
+```
+
+# このプロジェクトの作り方ログ
 ### NodeJS をインストール
 https://nodejs.org/
 ```sh
@@ -91,6 +101,9 @@ https://github.com/Microsoft/TypeScriptSamples/blob/master/imageboard/tsconfig.j
 
 #### tsd reinstall 自動実行
 このプロジェクトをクローンして起動したい人が `npm install` をしたとき同時に type definitions も install してやるには、 `package.json` の postinstall に `tsd reinstall` を追加しておけばよい
+
+#### npm run build でコンパイル
+全部 npm コマンドに集約してしまうのがカッコいい感じするので、 `package.json` の `scripts` に `"build": "tsc"` を追加しておく
 
 ### tsd が deprecated なので typings にする
 `npm install` するとこう言われる
